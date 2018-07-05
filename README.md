@@ -3,9 +3,11 @@ MagicMirror module to get energy consumption via a Wattvision API
 
 ## API
 Uses the open/free api that Wattvision publishes: https://www.wattvision.com/api/v0.2/elec?sensor_id=:sensor_id&api_id=:api_id&api_key=:api_key&type=:type&start_time=:start_time&end_time=:end_time
+
 Information here : https://wattvision.readme.io/docs/download-data-from-wattvision
 
 Get your API id and key from : https://www.wattvision.com/usr/api
+
 Get your sensor id from the settings page after you setup your device with wattvision
 
 ## Preview
@@ -13,6 +15,7 @@ Get your sensor id from the settings page after you setup your device with wattv
 
 ## Using the module
 run git clone https://github.com/vincep5/MMM-Wattvision from inside your MagicMirror/modules folder
+
 run npm install to install the chart.js dependencies
 
 
