@@ -25,7 +25,8 @@ Module.register("MMM-Wattvision", {
     },
     
     start: function() {
-        this.loaded = false;
+        this.loaded_usage = false;
+        this.loaded_history = false;
         this.getData();
         this.scheduleUpdate();
     },
@@ -37,7 +38,7 @@ Module.register("MMM-Wattvision", {
         const chartWrapper = document.createElement("div");
         chartWrapper.setAttribute("style", "position: relative; display: inline-block;");
 
-        if (!this.loaded) {
+        if (!this.loaded_usage && !this.loaded_history) {
             outerWrapper.innerHTML = this.translate("LOADING");
             outerWrapper.className = "dimmed light small";
             return outerWrapper;
@@ -159,10 +160,15 @@ Module.register("MMM-Wattvision", {
     socketNotificationReceived: function(notification, payload) {
         if (notification === "usage") {
             this.usage = payload;
+            this.loaded_usage = true;
         } else if(notification === "history") {
             this.hist = payload;
-            this.loaded = true;
+            this.loaded_history = true;
+        }
+
+        //display only when both have data loaded
+        if (this.loaded_usage && this.loaded_history) {
             this.updateDom(2000);
-        }       
+        }
     },
 });
