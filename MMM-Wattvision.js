@@ -13,7 +13,8 @@ Module.register("MMM-Wattvision", {
         api_key: '', // value from wattvision
         width: 250,
         height: 200,
-        fadeSpeed: 2000
+        fadeSpeed: 2000,
+        chart_title: "Last 3hr usage"
     },
 
     getStyles: function() {
@@ -108,7 +109,7 @@ Module.register("MMM-Wattvision", {
                 options: {
                     elements: { point: { radius: 0 } }, 
                     legend: { display: false },
-                    title: { display: true, text: "Last 3hr usage", padding: 5}
+                    title: { display: true, text: this.config.chart_title, padding: 5}
                 }
             };
             
