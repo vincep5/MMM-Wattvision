@@ -88,7 +88,7 @@ Module.register("MMM-Wattvision", {
             var arrLabels = []; //later set to blanks so the graph plots the points
 
             //we get datapoints every 10 seconds in a 3 hour span. We should display points at a longer interval, thus the 30
-            for (i = 0; i < this.hist.data.length; i++) {
+            for (var i = 0; i < this.hist.data.length; i++) {
                 if (i == 0 || i % 30 == 0) {
                     if (this.hist.data[i].v > 0) {
                         arrV.push(this.hist.data[i].v / 1000);
@@ -169,7 +169,7 @@ Module.register("MMM-Wattvision", {
 
         //display only when both have data loaded
         if (this.loaded_usage && this.loaded_history) {
-            this.updateDom(2000);
+            this.updateDom(this.config.fadeSpeed);
         }
     },
 });
