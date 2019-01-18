@@ -14,11 +14,13 @@ Get your sensor id from the settings page after you setup your device with wattv
 ![screenshot1](screenshot1.JPG)
 
 ## Install the module
- Go to your MagicMirror modules directory by entering ``cd MagicMirror/modules``
+ Go to your MagicMirror modules directory by entering `cd MagicMirror/modules`
 
- run ``git clone https://github.com/vincep5/MMM-Wattvision ``
+ run `git clone https://github.com/vincep5/MMM-Wattvision`
 
- run ``npm install`` to install the chart.js dependencies
+ run `cd MMM-Wattvision` to get into the newly created folder
+
+ run `npm install` to install the chart.js dependencies
 
 
 ## Config
@@ -29,11 +31,11 @@ modules: [
     module: "MMM-Wattvision",
     position: "top_right",
     header: "EnergyChart",
-      config: {
-          updateInterval: 10 * 60 * 1000, // every 10 minutes
-          sensor_id: '', // value from wattvision
-         api_id: '', // value from wattvision
-         api_key: '' // value from wattvision
-        }
+    config: {
+      updateInterval: 10 * 60 * 1000, // every 10 minutes
+      sensor_id: '', // value from wattvision
+      api_id: '', // value from wattvision
+      api_key: '' // value from wattvision
+      }
   },
 ]
