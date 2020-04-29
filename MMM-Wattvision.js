@@ -90,10 +90,8 @@ Module.register("MMM-Wattvision", {
             //we get datapoints every 10 seconds in a 3 hour span. We should display points at a longer interval, thus the 30
             for (var i = 0; i < this.hist.data.length; i++) {
                 if (i == 0 || i % 30 == 0) {
-                    if (this.hist.data[i].v > 0) {
-                        arrV.push(this.hist.data[i].v / 1000);
-                        arrLabels.push('');
-                    }
+                    arrV.push(this.hist.data[i].v / 1000);
+                    arrLabels.push('');
                 }
             }
             
